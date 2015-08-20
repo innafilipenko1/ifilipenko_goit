@@ -5,15 +5,15 @@ package ua.goit.htmlmaker.element;
  */
 public class Page implements Element {
 
-    private Element body;
+    private Element element;
 
     @Override
     public String print(){
 
         StringBuilder html = new StringBuilder();
         html.append("<html>");
-        if(body != null){
-            html.append(body.print());
+        if(element != null){
+            html.append(element.print());
         }
         html.append("</html>");
 
@@ -21,8 +21,8 @@ public class Page implements Element {
 
     }
 
-    public Page addBody(Body body){
-        this.body = body;
+    public Page addBody(Element element){
+        this.element = element;
         return this;
     }
 }

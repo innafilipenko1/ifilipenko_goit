@@ -5,24 +5,36 @@ package ua.goit.htmlmaker.element;
  */
 public class Page implements Element {
 
-    private Element element;
+    private Element body;
+    private Element head;
 
     @Override
     public String print(){
 
         StringBuilder html = new StringBuilder();
         html.append("<html>");
-        if(element != null){
-            html.append(element.print());
+
+        if(head != null){
+            html.append(head.print());
         }
+
+        if(body != null){
+            html.append(body.print());
+        }
+
         html.append("</html>");
 
         return html.toString();
 
     }
 
-    public Page addBody(Element element){
-        this.element = element;
+    public Page addBody(Element body){
+        this.body = body;
+        return this;
+    }
+
+    public Page addHead(Element head){
+        this.head = head;
         return this;
     }
 }

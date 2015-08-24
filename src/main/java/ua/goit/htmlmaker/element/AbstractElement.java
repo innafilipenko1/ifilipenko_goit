@@ -7,6 +7,8 @@ import java.util.List;
 public abstract class AbstractElement<T> {
 
     protected List<String> cssClasses = new ArrayList<String>();
+    protected String role;
+    protected String text = "";
 
     protected String getCssClasses(){
 
@@ -25,6 +27,29 @@ public abstract class AbstractElement<T> {
         return html.toString();
     }
 
+    protected String getCssRole(){
+        StringBuilder html = new StringBuilder();
+
+        if(!role.isEmpty()){
+            html
+                    .append(" role=\"")
+                    .append(role)
+                    .append('"');
+        }
+
+        return html.toString();
+    }
+
+    protected String getText(){
+        StringBuilder html = new StringBuilder();
+
+        if(!text.isEmpty()){
+            html.append(text);
+        }
+
+        return html.toString();
+    }
+
 
     public T addClass(String... cssClasses) {
 
@@ -34,5 +59,17 @@ public abstract class AbstractElement<T> {
 
         return (T) this;
 
+    }
+
+
+    public T addRole(String cssRole) {
+        this.role = cssRole;
+        return (T) this;
+
+    }
+
+    public T addText(String text) {
+        this.text = text;
+        return (T) this;
     }
 }

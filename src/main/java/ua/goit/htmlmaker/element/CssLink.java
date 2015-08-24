@@ -12,6 +12,6 @@ public class CssLink implements Element {
     @Override
     public String print() {
 
-        return String.format("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\"");
+        return String.format("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\">");
     }
 }
